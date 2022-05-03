@@ -1,0 +1,349 @@
+* {
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 380;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contato-header {
+    background-color: #eee;
+    padding: 10px
+}
+
+.contato-header ul#icones-header li {
+    display: inline;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+#icones-header li:hover:not(:last-child),
+ul#icones-header li ion-icon:hover {
+    color: #a00
+}
+
+ul#icones-header li ion-icon {
+    color: rgb(165, 154, 154);
+    vertical-align: middle;
+    height: 14px;
+}
+
+header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 2% 10px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 170px;
+    height: 70px;
+    padding-right: 15px;
+}
+
+.desktop ul,
+.mobile ul {
+    list-style-type: none;
+}
+
+nav.mobile {
+    width: 20px;
+    height: 20px;
+    background-image: url(imagens/icon_menu.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: none;
+    cursor: pointer;
+}
+
+.mobile ul {
+    position: absolute;
+    height: 100%;
+    padding-right: 100px;
+    left: 0px;
+    top: 0px;
+    display: none;
+    background-color: #a00;
+}
+
+.mobile li,
+.mobile li a {
+    cursor: pointer;
+    color: white;
+    padding: 10px 0;
+    margin: 20px;
+}
+
+.mobile li:hover,
+.mobile li a:hover {
+    background-color: rgba(145, 24, 24, 0.7) !important;
+}
+
+.desktop li,
+.desktop a {
+    display: inline;
+    margin-left: 15px;
+    padding-bottom: 7px;
+    color: #232a34;
+    font-size: 0.85em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.desktop li:hover,
+.desktop li a:hover {
+    color: #a00;
+    border-bottom: 2px solid #a00;
+    cursor: pointer;
+    transition: all 0.1s ease 0s;
+}
+
+.desktop a,
+.mobile li a {
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 0px;
+
+}
+
+main {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0 3%
+}
+
+.titulo-pag2 {
+    position: absolute;
+    width: 100%;
+    background-color: #a00;
+    z-index: -1;
+    margin: 10px 0 100px 0;
+    padding: 30px 0;
+}
+
+.titulo-pag {
+    padding: 20px 2%
+}
+
+.titulo-pag h4 {
+    text-transform: uppercase;
+    color: white
+}
+
+main p {
+    margin: 70px 0 30px 0;
+    font-size: 18px;
+}
+
+main .btn-cadastro {
+    border: 2px solid brown;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+}
+
+main .btn-cadastro:hover {
+    background-color: #B93443;
+}
+
+.btn-cadastro a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(185, 52, 67);
+    font-weight: 400;
+    display: inline-block;
+    cursor: pointer;
+    padding: 25px 10px;
+}
+
+.btn-cadastro a:hover {
+    color: white;
+}
+
+.middle {
+    display: flex;
+}
+
+.box1 .item1 {
+    width: 20em;
+}
+
+.box1 .item1 img {
+    width: 100%;
+}
+
+.box2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 10px 10px 15px;
+    line-height: 1.3em;
+}
+
+.box3 {
+    display: flex;
+    gap: 30px;
+}
+
+.box3 .item3 img,
+.box3-mobile img {
+    width: 280px;
+    border-radius: 10px 0 0 0;
+}
+
+.box-mobile {
+    display: none;
+}
+
+.assinatura {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.assinatura .box {
+    border: 2px solid gray;
+    min-width: 15em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+.assinatura .box:hover {
+    border-color: #B93443
+}
+
+.assinatura .box:hover .categoria {
+    color: white;
+    background-color: #B93443;
+    transition: 0.3s
+}
+
+.assinatura .box .categoria {
+    margin-top: 0em;
+    padding: 0.5em;
+    text-align: center;
+    background: white;
+    color: rgb(185, 52, 67);
+    border: 1px solid brown;
+    font-size: 110%;
+}
+
+.assinatura .box img {
+    height: 10em;
+}
+
+.assinatura .box .texto {
+    height: 20em;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 0 2%;
+    font-size: 110%;
+}
+
+.box .valor {
+    color: brown;
+    font-weight: bold;
+    font-size: 110%
+}
+
+footer,
+.rodape {
+    background-color: #eee;
+    width: 100%;
+    padding: 50px 3%;
+}
+
+footer .rodape {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 23px
+}
+
+.rodape h6 {
+    color: #a00;
+    font-weight: bold;
+}
+
+.img-rodape img {
+    height: 6em;
+}
+
+strong {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        justify-content: flex-start
+    }
+
+    .desktop ul {
+        display: none
+    }
+
+    nav.mobile {
+        display: inline-block;
+        margin: 0 50px;
+    }
+
+    .box3 {
+        display: none;
+    }
+
+    .box-mobile {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .box-mobile .item4 {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contato-header {
+        display: none
+    }
+
+    .titulo-pag2 {
+        padding: 25px 0;
+    }
+
+    .titulo-pag {
+        text-align: center;
+        padding: 15px 2%
+    }
+
+    .middle .box1 .item1 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .middle,
+    .box-mobile {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .assinatura {
+        display: block;
+    }
+
+    .assinatura .box {
+        width: 70%;
+        margin: 30px auto;
+    }
+
+    .assinatura .box .texto {
+        max-width: 500px;
+        text-align: justify
+    }
+}
