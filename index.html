@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="livro editora">
+    <meta name="keywords" content="livro,popular,editora,marxismo, expressão popular">
+    <meta name="author" content="Bruno">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Expressão Popular</title>
+
+    <style>
+        *{
+            font-family:  roboto; font-size:16px; font-weight:380;
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .contato-header{
+            background-color:#eee;
+            padding: 10px
+        }
+        .contato-header ul#icones-header li{
+            display: inline;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        #icones-header li:hover:not(:last-child), ul#icones-header li ion-icon:hover{
+            color:#a00
+        }
+        ul#icones-header li ion-icon{
+            color:rgb(165, 154, 154);
+            vertical-align: middle;
+            height: 14px;
+        }
+        header{
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 2% 10px 2%;
+            display: flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        header img{
+            width: 170px;
+            height: 70px;
+            padding-right: 15px;
+        }
+        .desktop ul ,.mobile ul{
+            list-style-type: none;
+        }
+        nav.mobile{
+            width:20px;
+            height:20px;
+            background-image: url(imagens/icon_menu.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: none;
+            cursor: pointer;
+        }
+        .mobile ul{
+            position: absolute;
+            height: 100%;
+            padding-right: 100px;
+            left: 0px;
+            top: 0px;
+            display: none;
+            background-color: #a00;
+        }
+        .mobile li, .mobile li a{
+            cursor:pointer;
+            color: white;
+            padding: 10px 0;
+            margin: 20px;
+        }
+        .mobile li:hover, .mobile li a:hover{
+        background-color: rgba(145, 24, 24, 0.7)!important;
+        }
+        .desktop li, .desktop a{
+            display: inline;
+            margin-left:15px;
+            padding-bottom: 7px;
+            color: #232a34;
+            font-size: 0.85em;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .desktop li:hover, .desktop li a:hover{
+            color: #a00;
+            border-bottom: 2px solid #a00;
+            cursor:pointer;
+            transition: all 0.1s ease 0s;
+        }
+        .desktop a, .mobile li a{
+            text-decoration: none;
+            font-size: 1em;
+            margin-left: 0px;
+            
+        }
+        main{
+            max-width: 1200px;
+            margin: 10px auto;
+            padding: 0 3%
+        }
+        .titulo-pag2{
+            position: absolute;
+            width: 100%;
+            background-color: #a00;
+            z-index: -1;
+            margin: 10px 0 100px 0;
+            padding: 30px 0;
+        }
+         .titulo-pag{
+           padding: 20px 2%
+        }
+        .titulo-pag h4{
+            text-transform: uppercase;
+            color:white
+        }
+        main p{
+            margin: 70px 0 30px 0;
+            font-size: 18px;
+        }
+        main .btn-cadastro{
+            border: 2px solid brown;
+            border-radius: 10px;
+            max-width: 300px;
+            text-align: center;
+        }
+        main .btn-cadastro:hover{
+            background-color:#B93443;
+        }
+        .btn-cadastro a{
+            text-decoration: none;
+            text-transform: uppercase;
+            color: rgb(185, 52, 67);
+            font-weight: 400;
+            display: inline-block;
+            cursor: pointer;
+            padding: 25px 10px;
+        }
+        .btn-cadastro a:hover{
+            color: white;
+        }
+        .middle{
+            display: flex;
+        }
+        .box1 .item1{
+            width: 20em;
+        }
+        .box1 .item1 img{
+            width: 100%;  
+        }
+        .box2{
+            display:flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px 10px 10px 15px;
+            line-height: 1.3em;
+        }
+        .box3{
+            display:flex;
+            gap: 30px;
+        }
+        .box3 .item3 img, .box3-mobile img{
+            width: 280px;
+            border-radius: 10px 0 0 0;
+        }
+        .box-mobile{
+            display: none;
+        }
+        .assinatura{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .assinatura .box{
+            border: 2px solid gray; min-width: 15em; margin-bottom: 0.5em; cursor: pointer; margin-right: 1em;
+        }
+        .assinatura .box:hover{
+            border-color: #B93443
+        }
+        .assinatura .box:hover .categoria{
+            color: white;
+            background-color:#B93443;
+            transition: 0.3s
+        }
+        .assinatura .box .categoria{
+            margin-top: 0em; padding: 0.5em; text-align: center; background: white; color: rgb(185, 52,67); border: 1px solid brown; font-size: 110%;
+        }
+        .assinatura .box img{
+            height: 10em;
+        }
+        .assinatura .box .texto{
+            height: 20em;
+            max-width: 280px;
+            margin: 0 auto; padding: 0 2%;
+            font-size: 110%;
+        }
+        .box .valor{
+            color: brown;
+            font-weight: bold;
+            font-size: 110%
+        }
+        footer, .rodape{
+            background-color: #eee;
+            width: 100%;
+            padding: 50px 3%;
+        }
+        footer .rodape{
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height:23px
+        }
+        .rodape h6{
+            color: #a00;
+            font-weight: bold;
+        }
+        .img-rodape img{
+            height:6em;
+        }
+        strong{
+            font-weight: bold;
+        }
+        @media screen and (max-width: 1024px){
+            header{
+                justify-content:flex-start
+            }
+            .desktop ul{
+                display:none
+            }
+            nav.mobile{
+                display:inline-block;
+                margin: 0 50px;
+            }
+            .box3{
+               display: none;
+            }
+            .box-mobile{
+                display: flex;
+                align-items: center;
+                margin-top: 30px;
+            }
+            .box-mobile .item4{
+                padding: 15px;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .contato-header{
+                display:none
+            }
+            .titulo-pag2{
+                padding: 25px 0;
+            }
+            .titulo-pag{
+                text-align: center;
+                padding: 15px 2%
+            }
+            .middle .box1 .item1{
+                width: 90%;
+                margin: 0 auto;
+            }
+            .middle, .box-mobile{
+                justify-content:center;
+                flex-direction: column;
+            }
+            .assinatura{
+                display: block;
+            }
+            .assinatura .box{
+                width: 70%;
+                margin: 30px auto;
+            }
+            .assinatura .box .texto{
+                max-width: 500px;
+                text-align:justify
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contato-header" style="width:100%; text-align:center">
+        <ul id="icones-header" style="list-style: none; margin-left: 35%;">
+            <li>Registre-se</li>
+            <li style="padding-left: 15px; border-left: 1px solid rgb(129, 122, 122);">Login</li>
+            <li><ion-icon name="logo-facebook"></ion-icon></li>
+            <li><ion-icon name="logo-twitter"></ion-icon></li>
+            <li><ion-icon name="logo-instagram"></ion-icon></li>
+            <li><ion-icon name="logo-youtube"></ion-icon></li>
+            <li style="margin-left: 5px;  padding: 0 13px; cursor: default; border-left: 1px solid rgb(129, 122, 122);">Fone<strong style="cursor: pointer; color:#de3241; font-weight: bold; padding-left: 5px">(11)3112-0994</strong></li>
+        </ul>
+    </div>
+    <header>
+        <nav class="mobile">  
+            <ul>
+                <li>EDITORA</li>
+                <li style="background-color: rgb(145, 24, 24);">CLUBE DO LIVRO</li>
+                <li>LIVRARIA</li>
+                <li>EVENTOS</li>
+                <li><a href="#endereco">ONDE ENCONTRAR</a></li>
+                <li>MINHA CONTA</li>
+                <li>CONTATO</li>
+            </ul>
+        </nav>
+        <a class="link-index" href="index.html"><img src="imagens/logo.png" alt="logo"></a>
+        <nav class="desktop">  
+            <ul>
+                <li>editora</li>
+                <li style="border-bottom: 2px solid #a00;color:#a00">CLUBE DO LIVRO</li>
+                <li>livraria</li>
+                <li>eventos</li>
+                <li><a href="#endereco">onde encontrar</a></li>
+                <li>MINHA CONTA</li>
+                <li>CONTATO</li>
+            </ul>
+        </nav>
+        </header>
+    <div class="titulo-pag2"></div>
+    <main>
+        <div class="titulo-pag"><h4 style="font-weight: bold;">clube do livro</h4></div>
+        <p>Já está cadastrado na nossa loja? Faça o seu login ou registre-se, em seguida atualize os dados de sua assinatura.</p>
+        <div class="btn-cadastro"><a href="">fazer login ou se registrar</a></div> <hr style="margin:20px 0 10px 0">
+
+        <div class="titulo-livro" style="background:#B93443; width:100%;text-align: center;padding: 1em; text-transform: uppercase;color: white; font-size:130%; margin-bottom: 1em;">livro do mês março/2022</div>
+
+        <div class="middle">
+            <div class="box1">
+                <div class="item1"><img src="imagens/capa-historia.png" alt="historia"></div>
+            </div>
+            <div class="box2">
+                <div class="item2"><strong>Sobre o Livro: </strong><span>Uma história popular do Terceiro Mundo é um dos principais referenciais teóricos para o debate sobre a compreensão da geopolítica, a partir da perspectiva dos povos, ao longo do século XX. Vijay Prashad retoma a formulação do conceito “Terceiro Mundo” relacionado à constituição de um bloco de países não alinhados à polarização mundial entre as potências capitalistas, lideradas pelos EUA, e as socialistas, comandadas pela URSS. Em sua maior parte, eram ex-colônias que consolidaram esse bloco na esteira das lutas de libertação nacional e na formulação de uma política própria baseada, principalmente, na questão nacional.</span></div>
+                <div class="box3">
+                        <div class="item3"><img src="imagens/autor-vijay.jpg" alt="autor"></div>
+                        <div class="item4"><strong>Sobre o Autor: </strong><span>Vijay Prashad é historiador e jornalista, membro do Partido Comunista da Índia (Marxista), editor-chefe da Leftword Books, na Índia, diretor global do Instituto Tricontinental de Pesquisa Social e referência internacional no debate sobre a ação do imperialismo nos países do Sul Global. O livro Uma História Popular do Terceiro Mundo (The Darker Nations: A People's History of the Third World - 2007) foi escolhido como melhor livro de não-ficção em 2008, pela organização Asian American Writers Workshop (AAWW), e premiado pelo Muzaffar Ahmed Book Award em 2009. Prashad é autor de outros dois livros lançados pela Expressão Popular, Balas de Washington e Estrela Vermelha sobre o Terceiro Mundo.</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box-mobile">
+            <div class="item3"><img src="imagens/autor-vijay.jpg" alt="autor"></div>
+            <div class="item4"><strong>Sobre o Autor: </strong><span>Vijay Prashad é historiador e jornalista, membro do Partido Comunista da Índia (Marxista), editor-chefe da Leftword Books, na Índia, diretor global do Instituto Tricontinental de Pesquisa Social e referência internacional no debate sobre a ação do imperialismo nos países do Sul Global. O livro Uma História Popular do Terceiro Mundo (The Darker Nations: A People's History of the Third World - 2007) foi escolhido como melhor livro de não-ficção em 2008, pela organização Asian American Writers Workshop (AAWW), e premiado pelo Muzaffar Ahmed Book Award em 2009. Prashad é autor de outros dois livros lançados pela Expressão Popular, Balas de Washington e Estrela Vermelha sobre o Terceiro Mundo.</span></div>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+
+        <strong>O que vem na Caixa do Clube do Livro Expressão Popular no mês de Março/22: </strong><span style="line-height: 22px">Uma História popular do Terceiro Mundo (Vijay Prashad), Cartão da Série Sul Global, Cartão Revoluções e Lutas Populares, Marcador Expressão Popular, Dossiê "Um mapa do presente da América Latina: uma entrevista com Héctor Béjar" + Poster Tricontinental.</span><br><br>
+        <div class="titulo-assinatura" style="background:#B93443; width:100%;text-align: center;padding: 1em; text-transform: uppercase;color: white; font-size:130%; margin-bottom: 1em; ">escolha o modelo da sua assinatura</div>
+       
+        <div class="assinatura">
+            <div class="box">
+                <div class="categoria">Leitor Militante</div>
+                <img src="imagens/livro_assinatura.jpg">
+                <div class="texto">Receba um lançamento da Expressão Popular todo mês</div>
+                <div class="valor">R$ 43.00 mensais</div>
+            </div>
+            <div class="box">
+                <div class="categoria">Leitor Solidário</div>
+                <img src="imagens/livro_assinatura.jpg">
+                <div class="texto">Receba dois livros todo mês: um lançamento da Expressão Popular mais um outro título do catálogo da Expressão Popular à sua escolha dentre a lista de disponíveis.</div>
+                <div class="valor">R$ 75.00 mensais</div>
+            </div>
+            <div class="box">
+                <div class="categoria">Leitor Apoiador</div>
+                <img src="imagens/livro_assinatura.jpg">
+                <div class="texto">Receba dois livros todo mês: um lançamento da Expressão Popular mais um outro título do catálogo da Expressão Popular à sua escolha dentre a lista de disponíveis. Além de receber os livros você apoia a continuidade do projeto da editora Expressão Popular e participa de promoções especiais.</div>
+                <div class="valor">R$ 100.00 mensais</div>
+            </div>
+        </div><br><br><br><br><br><br><hr><br><br><br><br><br>
+    </main>
+    <footer>
+        <div class="rodape">
+            <h6 style="margin-bottom:0.5em; text-transform:uppercase">Editora Expressão Popular - na batalha das idéias</h6>
+            <span style="color:#AA0000"><ion-icon name="call-outline" style="padding-right: 0.2em"></ion-icon>(11) 3112-0941</span>
+            <p>Atendendo as normas de saúde e cuidados em função da <strong style="font-weight:bold">COVID-19</strong> toda nossa equipe está trabalhando em "home-office".</p>
+            <p>Os atendimentos estão sendo realizados <span style="color:#AA0000; cursor:pointer">apenas via e-mail, </span>retornaremos o mais breve possivel a sua solicitação.</p><br><hr style="border-color:rgba(182, 180, 179, 0.3)"><br>
+            <div style="font-size: 80%">
+                Editora Expressão Popular LTDA. | CNPJ: 03.048.166.0001-76 | Inscr.Estadual: 115.264.278.112 <br> Rua Abolição, 201 – Bela Vista - São Paulo/SP – CEP 01319-010 <br> ©2019 Todos os Direitos Reservados.</div>
+        </div>
+        <div id="endereco" class="img-rodape" style="text-align: center"><img src="imagens/logo.png"> </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
