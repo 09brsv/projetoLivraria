@@ -1,6 +1,10 @@
 $(function() {
-  $('.mobile') .click(function() {
-      $(this).find('ul').slideToggle();
+  $('nav.mobile') .click(function() {
+      $(this).find('ul').show();
+      $(this).find('.icon-mobile').css('display', 'flex');
+  });
+  $('.icon-mobile').click(function() {
+    $('.mobile ul').fadeOut();
   });
   $('nav a').click(function() {
       var href = $(this).attr('href');
@@ -9,4 +13,6 @@ $(function() {
       $('html,body').animate({'scrollTop':offSetTop});
       return false;
   })
+
+    
 })
