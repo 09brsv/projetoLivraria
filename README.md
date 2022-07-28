@@ -2,6 +2,10 @@
 
 <br>
 Repliquei uma landing page de uma editora. 😝
+<br><br>
+
+![alt text](imagens/livraria-min.png "screenshot-livraria")
+
 <dl>
   <dt>Obs :
   <dd>
